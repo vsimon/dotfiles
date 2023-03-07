@@ -1,8 +1,8 @@
-{{- if glob (joinPath .chezmoi.homeDir ".tmux.conf") -}}
+{{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
 # Ensure this script runs on .tmux.conf changes by including a hash of its file contents:
-# ~/.tmux.conf: {{ include (joinPath .chezmoi.homeDir ".tmux.conf") | sha256sum }}
+# .tmux.conf: {{ include "dot_tmux.conf" | sha256sum }}
 
 {{ .chezmoi.homeDir }}/.tmux/plugins/tpm/bin/install_plugins
 {{ end -}}

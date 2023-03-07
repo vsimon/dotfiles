@@ -1,8 +1,8 @@
-{{- if glob (joinPath .chezmoi.homeDir ".config/btt/Default.bttpreset") -}}
+{{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-# Ensure this script runs on .Brewfile changes by including a hash of its file contents:
-# ~/.config/btt/Default.bttpreset: {{ include (joinPath .chezmoi.homeDir ".config/btt/Default.bttpreset") | sha256sum }}
+# Ensure this script runs on file changes by including a hash of its file contents:
+# Default.bttpreset: {{ include "dot_config/btt/Default.bttpreset" | sha256sum }}
 
-open -a /Applications/BetterTouchTool.app --args $HOME/.config/btt/Default.bttpreset
+open -a /Applications/BetterTouchTool.app --args {{ joinPath .chezmoi.sourceDir "dot_config/btt/Default.bttpreset" | quote }}
 {{ end -}}
