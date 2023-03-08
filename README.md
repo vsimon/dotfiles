@@ -13,7 +13,7 @@ My dotfiles, managed declaratively with [chezmoi](https://github.com/twpayne/che
 clunky hand-rolled scripts.
 
 `brew` and its dependencies are installed first and packages are managed through
-a [`Brewfile`](dot_Brewfile).
+a [`Brewfile`](Brewfile).
 
 `ohmyzsh` is installed through an external archive and plugins/themes are
 specified in the [`.zshrc`](dot_zshrc) file.

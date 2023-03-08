@@ -3,5 +3,5 @@ LICENSE
 
 .oh-my-zsh/cache
 .config/btt
-.Brewfile
 .config/age/key.age
+Brewfile

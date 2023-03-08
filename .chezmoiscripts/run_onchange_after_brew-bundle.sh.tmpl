@@ -1,9 +1,9 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-# Ensure this script runs on .Brewfile changes by including a hash of its file contents:
-# .Brewfile: {{ include "dot_Brewfile" | sha256sum }}
+# Ensure this script runs on Brewfile changes by including a hash of its file contents:
+# Brewfile: {{ include "Brewfile" | sha256sum }}
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-brew bundle --no-lock --file "{{ .chezmoi.sourceDir }}/dot_Brewfile"
+brew bundle --no-lock --file "{{ .chezmoi.sourceDir }}/Brewfile"
 {{ end -}}
