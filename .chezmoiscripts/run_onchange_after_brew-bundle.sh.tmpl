@@ -5,5 +5,5 @@
 # .Brewfile: {{ include "dot_Brewfile" | sha256sum }}
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-brew bundle --no-lock --file {{ joinPath .chezmoi.sourceDir "dot_Brewfile" | quote }}
+brew bundle --no-lock --file "{{ .chezmoi.sourceDir }}/dot_Brewfile"
 {{ end -}}

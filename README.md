@@ -1,6 +1,6 @@
 # Dotfiles
 
-My dotfiles, managed with [chezmoi](https://github.com/twpayne/chezmoi).
+My dotfiles, managed declaratively with [chezmoi](https://github.com/twpayne/chezmoi).
 
 ## Installation
 
@@ -10,16 +10,18 @@ My dotfiles, managed with [chezmoi](https://github.com/twpayne/chezmoi).
 ## Notes
 
 `chezmoi` is the only dependency for a one-touch install experience without
-clunky hand-rolled install scripts.
+clunky hand-rolled scripts.
 
-`brew` and its dependencies are installed first and packages are managed
-through a `Brewfile`.
+`brew` and its dependencies are installed first and packages are managed through
+a [`Brewfile`](dot_Brewfile).
 
-`ohmyzsh` is installed through an external archive and
-plugins/themes are specified in the `.zshrc` file.
+`ohmyzsh` is installed through an external archive and plugins/themes are
+specified in the [`.zshrc`](dot_zshrc) file.
 
-`tmux` plugins are managed
-with the `tpm` git-repo and plugins are specified in the `.tmux.conf` file.
+`tmux` plugins are managed with the `tpm` git-repo and plugins are specified in
+the [`.tmux.conf`](dot_tmux.conf) file.
+
+`git` configuration is templated with the [`.chezmoi.yaml.tmpl`](.chezmoi.yaml.tmpl) file.
 
 Shell history is managed by `atuin`.
 
