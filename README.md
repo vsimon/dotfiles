@@ -4,7 +4,7 @@ My dotfiles, managed declaratively with [chezmoi](https://github.com/twpayne/che
 
 ## Installation
 
-1. Install [chezmoi](https://www.chezmoi.io) binary to bootstrap without brew.
+1. Install [chezmoi](https://www.chezmoi.io) binary to bootstrap without `brew`.
 2. `chezmoi init vsimon`
 
 ## Notes

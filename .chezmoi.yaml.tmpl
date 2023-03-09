@@ -1,7 +1,12 @@
 {{- $email := promptString "git email" -}}
 
+encryption: age
+age:
+  identity: ~/.config/age/key
+  recipient: age1m46sa3t7tnt54auqahfkqsrj67ngl7cmxnwc8hehyxzn50la3eks7d44w7
 data:
-  age:
-    identity: ~/.config/age/key
-    recipient: age1m46sa3t7tnt54auqahfkqsrj67ngl7cmxnwc8hehyxzn50la3eks7d44w7
   email: {{ $email }}
+edit:
+  command: code
+  args:
+    - --wait
