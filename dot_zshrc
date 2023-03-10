@@ -1,8 +1,8 @@
 # Oh-my-zsh setup
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME=simple #gnzh #kphoen
-zstyle ':omz:update' mode disabled  # disable automatic updates
+ZSH_THEME=simple                   #gnzh #kphoen
+zstyle ':omz:update' mode disabled # disable automatic updates
 plugins=(
   aws
   brew
@@ -19,7 +19,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Atuin setup
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # Git setup
 alias gl='git log'
