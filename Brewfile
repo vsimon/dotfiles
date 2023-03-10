@@ -18,6 +18,7 @@ brew 'ripgrep'
 brew 'tmux'
 brew 'volta'
 brew 'watch'
+brew 'yq'
 
 cask 'authy'
 cask 'aws-vault'

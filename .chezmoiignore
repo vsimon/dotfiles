@@ -1,7 +1,8 @@
 README.md
 LICENSE
 
-.oh-my-zsh/cache
-.config/btt
 .config/age/key.age
+.config/btt
+.config/k9s
+.oh-my-zsh/cache
 Brewfile
