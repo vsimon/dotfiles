@@ -20,6 +20,7 @@ brew 'volta'
 brew 'watch'
 
 cask 'authy'
+cask 'aws-vault'
 cask 'bettertouchtool'
 cask 'brave-browser'
 cask 'docker'
