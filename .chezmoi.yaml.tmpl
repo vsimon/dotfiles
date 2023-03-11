@@ -1,4 +1,6 @@
 {{- $email := promptString "git email" -}}
+{{- $name := promptString "git name (default: Vicken Simonian)" | default "Vicken Simonian" -}}
+{{- $github_username := promptString "github username (default: vsimon)" | default "vsimon" -}}
 
 encryption: age
 age:
@@ -6,6 +8,8 @@ age:
   recipient: age1m46sa3t7tnt54auqahfkqsrj67ngl7cmxnwc8hehyxzn50la3eks7d44w7
 data:
   email: {{ $email }}
+  name: {{ $name }}
+  github_username: {{ $github_username }}
 edit:
   command: code
   args:
