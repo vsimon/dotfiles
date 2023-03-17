@@ -35,6 +35,9 @@ alias gs='git status'
 # Go setup
 export PATH="$(go env GOPATH)/bin:$PATH"
 
+# tfswitch setup
+export PATH="$HOME/bin:$PATH"
+
 # Volta setup
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
