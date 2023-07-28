@@ -1,4 +1,3 @@
-tap 'homebrew/cask'
 tap 'warrensbox/tap'
 tap 'gjbae1212/gossm'
 

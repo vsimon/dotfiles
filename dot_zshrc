@@ -21,6 +21,9 @@ source $ZSH/oh-my-zsh.sh
 # Atuin setup
 eval "$(atuin init zsh --disable-up-arrow)"
 
+# Brew setup
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Git setup
 alias gl='git log'
 alias gf='git fetch --all --prune'
@@ -34,6 +37,9 @@ alias gs='git status'
 
 # Go setup
 export PATH="$(go env GOPATH)/bin:$PATH"
+
+# K8S setup
+export KUBE_EDITOR='code -w'
 
 # tfswitch setup
 export PATH="$HOME/bin:$PATH"
