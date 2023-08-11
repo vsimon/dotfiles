@@ -18,11 +18,17 @@ plugins=(
   zsh-syntax-highlighting) # zsh-syntax-highlighting must be at end
 source $ZSH/oh-my-zsh.sh
 
+# AWS setup
+export AWS_PAGER=""
+
 # Atuin setup
 eval "$(atuin init zsh --disable-up-arrow)"
 
 # Brew setup
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# direnv setup
+alias di='echo dotenv > .envrc && touch .env && direnv allow'
 
 # Git setup
 alias gl='git log'
