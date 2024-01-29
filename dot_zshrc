@@ -12,6 +12,7 @@ plugins=(
   kubectl
   kubectx
   terraform
+  timer
   tmux
   z
   zsh-autosuggestions
@@ -40,12 +41,16 @@ alias gcan='git commit -a --amend --no-edit'
 alias gd='git diff'
 alias gc='git commit'
 alias gs='git status'
+export GIT_PAGER='less -FX'
 
 # Go setup
 export PATH="$(go env GOPATH)/bin:$PATH"
 
 # K8S setup
 export KUBE_EDITOR='code -w'
+
+# rg setup
+alias rg="rg --hidden --glob '!.git'"
 
 # tfswitch setup
 export PATH="$HOME/bin:$PATH"
