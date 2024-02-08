@@ -1,0 +1,9 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# Ensure this script runs on file changes by including a hash of its file contents:
+# license.bettertouchtool.age: {{ include "dot_config/btt/license.bettertouchtool.age" | sha256sum }}
+
+chezmoi decrypt --output "/tmp/license.bettertouchtool" "{{ .chezmoi.sourceDir }}/dot_config/btt/license.bettertouchtool.age"
+open "/tmp/license.bettertouchtool"
+{{ end -}}

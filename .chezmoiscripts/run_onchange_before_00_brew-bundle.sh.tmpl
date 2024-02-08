@@ -2,8 +2,9 @@
 #!/bin/bash
 
 # Ensure this script runs on Brewfile changes by including a hash of its file contents:
-# Brewfile: {{ include "Brewfile" | sha256sum }}
+# Brewfile: {{ include "Brewfile.tmpl" | sha256sum }}
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-brew bundle --no-lock --file "{{ .chezmoi.sourceDir }}/Brewfile"
+chezmoi execute-template < "{{ .chezmoi.sourceDir }}/Brewfile.tmpl" > /tmp/Brewfile
+brew bundle --no-lock --file "/tmp/Brewfile"
 {{ end -}}

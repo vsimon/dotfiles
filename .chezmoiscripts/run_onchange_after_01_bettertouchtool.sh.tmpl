@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # Ensure this script runs on file changes by including a hash of its file contents:
-# Default.bttpreset: {{ include "dot_config/btt/Default.bttpreset" | sha256sum }}
+# Personal.bttpreset: {{ include "dot_config/btt/Personal.bttpreset" | sha256sum }}
 
-open -a /Applications/BetterTouchTool.app --args "{{ .chezmoi.sourceDir }}/dot_config/btt/Default.bttpreset"
+open "{{ .chezmoi.sourceDir }}/dot_config/btt/Personal.bttpreset"
 {{ end -}}

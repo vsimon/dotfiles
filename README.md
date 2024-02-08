@@ -25,15 +25,19 @@ the [`.tmux.conf`](dot_tmux.conf) file.
 
 Shell history is managed by `atuin`.
 
-## How to create and update an age file
+## How to update an age file
 
 Update somefile and reencrypt the file with:
 
-```sh
-age --encrypt -r [public-key] --armor ~/.somefolder/somefile > private_dot_somefolder/encrypted_somefile.age
-```
+TBD...
 
-The public key is listed in `.config/age/key`.
+```sh
+chezmoi encrypt ...
+
+or
+
+chezmoi add --encrypt ...
+```
 
 ## Credits
 

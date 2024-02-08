@@ -32,9 +32,12 @@ cask 'drawio'
 cask 'grandperspective'
 cask 'iterm2'
 cask 'postman'
-cask 'slack'
 cask 'syncthing'
-cask 'veracrypt'
 cask 'visual-studio-code'
 cask 'whatsapp'
 cask 'zoom'
+
+{{ if not .work_device }}
+cask 'slack'
+cask 'veracrypt'
+{{ end }}
