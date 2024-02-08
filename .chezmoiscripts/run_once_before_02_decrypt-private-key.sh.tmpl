@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ ! -f "${HOME}/.config/age/key" ]; then
+    echo "Chezmoi Decryption"
+    mkdir -p "${HOME}/.config/age"
+    chezmoi age decrypt --output "${HOME}/.config/age/key" --passphrase "{{ .chezmoi.sourceDir }}/dot_config/age/key.age"
+    chmod 600 "${HOME}/.config/age/key"
+fi

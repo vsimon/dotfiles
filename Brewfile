@@ -1,7 +1,6 @@
 tap 'warrensbox/tap'
 tap 'gjbae1212/gossm'
 
-brew 'age'
 brew 'atuin'
 brew 'awscli'
 brew 'chezmoi'

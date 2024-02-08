@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# Ensure this script runs on file changes by including a hash of its file contents:
-# key.age: {{ include "dot_config/age/key.age" | sha256sum }}
-
-echo "For chezmoi decryption:"
-age --decrypt --output "${HOME}/.config/age/key" "{{ .chezmoi.sourceDir }}/dot_config/age/key.age"
-chmod 600 "${HOME}/.config/age/key"
