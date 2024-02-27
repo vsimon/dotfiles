@@ -2,6 +2,7 @@
 {{ if glob (joinPath .chezmoi.homeDir "Library/Keychains/aws-vault.keychain-db") -}}
 #!/bin/bash
 
+touch {{ .chezmoi.homeDir }}/Library/Keychains/aws-vault.keychain-db
 security set-keychain-settings "{{ .chezmoi.homeDir }}/Library/Keychains/aws-vault.keychain-db"
 {{ end -}}
 {{ end -}}
