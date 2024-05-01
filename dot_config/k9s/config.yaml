@@ -1,14 +1,17 @@
 k9s:
+  liveViewAutoRefresh: false
   refreshRate: 2
   maxConnRetry: 5
-  enableMouse: true
-  headless: true
-  logoless: true
-  crumbsless: false
   readOnly: false
   noExitOnCtrlC: false
-  noIcons: false
+  ui:
+    enableMouse: true
+    headless: true
+    logoless: true
+    crumbsless: false
+    noIcons: false
   skipLatestRevCheck: false
+  disablePodCounting: false
   logger:
     tail: 100
     buffer: 5000
