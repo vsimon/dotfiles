@@ -1,14 +1,14 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-# Ensure this script runs on config.yml changes by including a hash of its file contents:
-# config.yml: {{ include "dot_config/k9s/config.yml" | sha256sum }}
+# Ensure this script runs on config.yaml changes by including a hash of its file contents:
+# config.yaml: {{ include "dot_config/k9s/config.yaml" | sha256sum }}
 
 # This merges rather than replaces the contents of the config file because this
 # is a file that periodically gets modified.
 
 DEST="{{ .chezmoi.homeDir }}/Library/Application Support/k9s"
 mkdir -p "$DEST"
-touch "$DEST/config.yml"
-yq eval-all -i '. as $item ireduce ({}; . *+ $item)' "$DEST/config.yml" "{{ .chezmoi.sourceDir }}/dot_config/k9s/config.yml"
+touch "$DEST/config.yaml"
+yq eval-all -i '. as $item ireduce ({}; . *+ $item)' "$DEST/config.yaml" "{{ .chezmoi.sourceDir }}/dot_config/k9s/config.yaml"
 {{ end -}}
