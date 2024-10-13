@@ -58,3 +58,6 @@ export PATH="$HOME/bin:$PATH"
 # Volta setup
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Rust setup
+export PATH="$HOME/.cargo/bin:$PATH"
