@@ -10,7 +10,6 @@ plugins=(
   fzf
   git
   kubectl
-  kubectx
   terraform
   timer
   tmux
