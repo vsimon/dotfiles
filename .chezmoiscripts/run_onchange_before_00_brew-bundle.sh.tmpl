@@ -6,5 +6,5 @@
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 chezmoi execute-template < "{{ .chezmoi.sourceDir }}/Brewfile.tmpl" > /tmp/Brewfile
-brew bundle --no-lock --file "/tmp/Brewfile"
+brew bundle --file "/tmp/Brewfile"
 {{ end -}}

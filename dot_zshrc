@@ -46,7 +46,7 @@ export GIT_PAGER='less -FX'
 export PATH="$(go env GOPATH)/bin:$PATH"
 
 # K8S setup
-export KUBE_EDITOR='code -w'
+export KUBE_EDITOR='cursor -w'
 
 # rg setup
 alias rg="rg --hidden --glob '!.git'"
