@@ -10,6 +10,7 @@ plugins=(
   fzf
   git
   kubectl
+  kube-ps1
   terraform
   timer
   tmux
@@ -46,8 +47,11 @@ export GIT_PAGER='less -FX'
 export PATH="$(go env GOPATH)/bin:$PATH"
 
 # K8S setup
-export KUBE_EDITOR='code -w'
+export KUBE_EDITOR='cursor -w'
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# mise setup
+eval "$(mise activate zsh)"
 
 # rg setup
 alias rg="rg --hidden --glob '!.git'"
@@ -59,5 +63,14 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # Rust setup
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# mise setup
-eval "$(mise activate zsh)"
+# zsh setup
+function get_cluster_short() {
+  echo "$1" | cut -d / -f2
+}
+KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
+KUBE_PS1_HIDE_IF_NOCONTEXT=true
+KUBE_PS1_NS_ENABLE=false
+KUBE_PS1_PREFIX=
+KUBE_PS1_SUFFIX="|"
+KUBE_PS1_SYMBOL_ENABLE=false
+PROMPT='$(kube_ps1)'$PROMPT
