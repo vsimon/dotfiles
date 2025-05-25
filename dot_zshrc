@@ -65,12 +65,13 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # zsh setup
 function get_cluster_short() {
-  echo "$1" | cut -d / -f2
+  echo $(echo "$1" | cut -d : -f5)/$(echo "$1" | cut -d / -f2)
 }
+
 KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
 KUBE_PS1_HIDE_IF_NOCONTEXT=true
 KUBE_PS1_NS_ENABLE=false
 KUBE_PS1_PREFIX=
-KUBE_PS1_SUFFIX="|"
+KUBE_PS1_SUFFIX=" "
 KUBE_PS1_SYMBOL_ENABLE=false
 PROMPT='$(kube_ps1)'$PROMPT
