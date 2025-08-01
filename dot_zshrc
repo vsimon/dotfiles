@@ -34,6 +34,7 @@ alias di='echo dotenv > .envrc && touch .env && direnv allow'
 # Git setup
 alias gl='git log'
 alias gf='git fetch --all --prune'
+alias gr='git rebase'
 alias grom='git rebase $(git symbolic-ref --short refs/remotes/origin/HEAD)'
 alias gprune='master=$(basename $(git symbolic-ref --short refs/remotes/origin/HEAD)); git branch --merged $master | grep -v "${master}$" | xargs git branch -d'
 alias gsgr='git stash && git fetch && git rebase $(git symbolic-ref --short refs/remotes/origin/HEAD) && git stash pop'
