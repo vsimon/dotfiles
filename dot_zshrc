@@ -57,10 +57,6 @@ eval "$(mise activate zsh)"
 # rg setup
 alias rg="rg --hidden --glob '!.git'"
 
-# Volta setup
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 # Rust setup
 export PATH="$HOME/.cargo/bin:$PATH"
 
