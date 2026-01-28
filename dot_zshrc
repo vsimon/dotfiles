@@ -55,6 +55,33 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 # K8S setup
 export KUBE_EDITOR='cursor -w'
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+kall() {
+  local filter="" exclude="" ns=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -f|--filter)  filter="$2"; shift 2 ;;
+      -e|--exclude) exclude="$2"; shift 2 ;;
+      -n|--namespace) ns="$2"; shift 2 ;;
+      -h|--help)
+        echo "Usage: kall [-f pattern] [-e pattern] [-n namespace] <command...>"
+        echo "  -f, --filter    Only include contexts matching pattern"
+        echo "  -e, --exclude   Exclude contexts matching pattern"
+        echo "  -n, --namespace Set namespace for all contexts"
+        return 0 ;;
+      *) break ;;
+    esac
+  done
+
+  local contexts
+  contexts=$(kubectl config get-contexts -o name)
+  [[ -n "$filter" ]] && contexts=$(echo "$contexts" | grep -E "$filter")
+  [[ -n "$exclude" ]] && contexts=$(echo "$contexts" | grep -vE "$exclude")
+
+  while IFS= read -r ctx; do
+    [[ -z "$ctx" ]] && continue
+    kubie exec "$ctx" "$ns" "$@"
+  done <<< "$contexts"
+}
 
 # mise setup
 eval "$(mise activate zsh)"
