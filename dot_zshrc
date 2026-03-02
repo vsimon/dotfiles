@@ -53,7 +53,7 @@ export GIT_PAGER='less -FX'
 export PATH="$(go env GOPATH)/bin:$PATH"
 
 # K8S setup
-export KUBE_EDITOR='cursor -w'
+export KUBE_EDITOR='code -w'
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 kall() {
   local filter="" exclude="" ns=""
