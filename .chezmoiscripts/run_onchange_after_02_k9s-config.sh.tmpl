@@ -7,6 +7,8 @@
 # This merges rather than replaces the contents of the config file because this
 # is a file that periodically gets modified.
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 DEST="{{ .chezmoi.homeDir }}/Library/Application Support/k9s"
 mkdir -p "$DEST"
 touch "$DEST/config.yaml"
